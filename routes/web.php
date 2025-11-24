@@ -1,22 +1,69 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
+use App\Http\Controllers\uricontroller;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/post', function () {
-    return view('post');
-})->name('mypost');
+
+route:: view('/home','home')->Middleware('check1');
+route::view('/hm','hm');
 
 
-Route::get('/test', function () {
-    return view('about');
+Route::get('/student', function () {
+    return view('student');
+});
+
+Route::post('/student/store', [Testcontroller::class, 'studentstore'])->name('student.store');
+
+
+
+Route::get('/foo/bar',[uricontroller::class,'index']);
+
+
+Route::get('/example',function(){
+     return view('example');
+
+
 });
 
 
-Route::redirect('/about','/test',301);//301 parmanent redirect
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Route::get('/post', function () {
+//     return view('post');
+// })->name('mypost');
+
+
+// Route::get('/test', function () {
+//     return view('about');
+// });
+
+
+// Route::redirect('/about','/test',301);//301 parmanent redirect
+
 
 
 
@@ -72,8 +119,15 @@ Route::redirect('/about','/test',301);//301 parmanent redirect
 
 
 
-Route::get("/test",\App\Http\controllers\Testcontroller::class);
-Route::get("/test/one",[\App\Http\controllers\Testcontroller::class,"testingOne"]);
+// Route::get("/test",\App\Http\controllers\Testcontroller::class);
+// Route::get("/test/one",[\App\Http\controllers\Testcontroller::class,"testingOne"]);
+
+
+
+
+
+
+
 
 
 ?>

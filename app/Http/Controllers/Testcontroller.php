@@ -15,8 +15,9 @@ class Testcontroller extends Controller
     return "TESTING ONE";
    }
 
-
-
+   public function studentstore(Request $request){
+        dd($request->all());
+    }
 
 
 }
